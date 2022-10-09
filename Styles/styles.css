@@ -32,19 +32,26 @@ header .navigation-container{
     background-color: var(--main-pink);
 }
 header .navigation-container .navigation-logo{
+    width: 30%;
+    margin: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+header .navigation-container .navigation-logo a{
     background-image: url("../Sources/INDEX/NAV-LOGO.png");
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
     cursor: pointer;
-    width: 30%;
-    margin: 10px 20px;
+    width: 80%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 header .navigation-container .navigation-menu {
-    width: 80%;
+    width: 50%;
     margin: 0 0 0 5%;
     padding-right: 2%;
     display: flex;
@@ -75,7 +82,7 @@ header .navigation-container .navigation-menu a {
     position: relative;
     top: 0;
     right:0;
-    width: 30%;
+    width: 20%;
     height: 100%;
     display: flex;
     align-items: center;
@@ -84,6 +91,14 @@ header .navigation-container .navigation-menu a {
     font-size: 0.8rem;
     font-weight: 100;
     padding: 0 5px;
+}
+#navigation-login span:hover{
+    border-radius: 50px;
+    background-color: var(--font-pink);
+    padding: 0 2px;
+}
+#navigation-login .user-menu__log-out:active {
+    border-bottom: 1px solid var(--just-white);
 }
 #navigation-login .navigation__login-register{
     position: absolute;
@@ -113,18 +128,36 @@ header .navigation-container .navigation-menu a {
     height: 100%;
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: center;
+    align-items: center;    
+    justify-content: end;
 }
 #navigation-login .navigation__login-logged a {
     cursor:pointer;    
-    width: 30%;
+    width: 50%;
     height: 65%;
     background-image: url("../Sources/INDEX/LOGGED-USERICON.png");
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    
+}
+#navigation-login #navigation__login-responsive-menu{
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 100%;    
+    flex-direction: row;
+    align-items: center;    
+    justify-content: end;
+    visibility:hidden;
+}
+#navigation-login #navigation__login-responsive-menu div{
+    cursor:pointer;    
+    width: 50%;
+    height: 65%;
+    background-image: url("../Sources/INDEX/login__responsive-menu.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;  
 }
 /* displayed menu */
 #navigation-login #user-menu {
@@ -157,7 +190,7 @@ header .navigation-container .navigation-menu a {
     display: flex;
     justify-self: flex-end;
     width: 16px;
-    margin: 0 8px;
+    margin: 0 px;
     cursor: pointer;
 }
 
@@ -170,6 +203,9 @@ header .navigation-container .navigation-menu a {
     align-items: center;
     justify-content: center;
     cursor: pointer;
+}
+#navigation-login #user-menu .user-menu__responsive-options{
+    display:none;
 }
 #navigation-login #user-menu .user-menu__language-flags img:hover {
     transform: scale(1.1);
@@ -206,4 +242,162 @@ header .navigation-container .navigation-menu a {
     align-items: center;
     justify-content: center;
     cursor: pointer;
+}
+/* Responsive Menu */
+
+@media screen and (max-width: 1020px) {
+    header .navigation-container .navigation-logo {
+        width: 60%;
+    }
+    header .navigation-container .navigation-logo a {
+        width: 180px;
+        height: 30px;
+        margin:0;
+        padding:0;
+    }
+    
+    header .navigation-container .navigation-menu {
+        display:none;
+    }
+    header .navigation-container .navigation-menu a{
+        display:none;
+    }
+    #navigation-login #user-menu .user-menu__menu-buttons hr{
+        border: none;
+        background-color: var(--just-white);
+        height: 1px;
+    }
+    #navigation-login {
+        width: 40%;
+    }
+    #navigation-login .navigation__login-logged{
+        display:none; 
+    }
+    #navigation-login #navigation__login-responsive-menu {
+        visibility:visible;
+        width: 100%;
+        justify-items: end;
+    }
+    #navigation-login #navigation__login-responsive-menu div {
+        visibility:visible;
+        width: 30%;
+        margin-right: 15px;
+    }
+    #navigation-login #user-menu {
+        height: calc(100vh - 50px);
+        grid-template-columns: 1fr 5fr 1fr;
+    }
+    #navigation-login #user-menu .user-menu__responsive-options{
+        display:block;
+    }
+    #navigation-login #user-menu .user-menu__log-out{
+        width: 100%;
+        align-content:start;
+    }
+    #navigation-login #user-menu #user-menu__close-icon {
+    position: relative;
+    grid-column: 3/4;
+    grid-row: 1/2;
+    display: flex;
+    justify-self: flex-end;
+    width: 16px;
+    margin: 0 px;
+    cursor: pointer;
+}
+
+#navigation-login #user-menu .user-menu__language-flags{
+    grid-column: 2/3;
+    grid-row: 2/3;
+    width: 100%;
+    height: 30%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+#navigation-login #user-menu .user-menu__language-flags img:hover {
+    transform: scale(1.1);
+}
+#navigation-login #user-menu .user-menu__menu-buttons {
+    grid-column: 2/3;
+    grid-row: 3/4;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-left: 10px;
+    justify-content: center;
+    cursor: pointer;
+}
+#navigation-login #user-menu .user-menu__menu-buttons img{
+    position:relative;
+    top: 2px;
+    left: 5px;
+    width: 16px;
+}
+#navigation-login #user-menu .user-menu__menu-buttons a {
+    margin-left: 10px;
+}
+#navigation-login #user-menu .user-menu__menu-buttons a:hover {
+    border-bottom: 1px solid var(--just-white);
+}
+#navigation-login #user-menu #user-menu__log-out {
+    grid-column: 2/3;
+    grid-row: 4/5;
+    width: 100%;
+    height: 20%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+/* grid */
+#navigation-login #user-menu{
+    grid-template-rows: 5% 5% 80% 10%;
+}
+#navigation-login #user-menu #user-menu__close-icon {
+    justify-self: flex-end;
+    align-self: start;
+    margin: 5px;    
+}
+#navigation-login #user-menu .user-menu__language-flags{
+    align-content: start;
+}
+#navigation-login #user-menu .user-menu__menu-buttons {
+    grid-row: 3/4;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-left: 10px;
+    justify-content: center;
+    cursor: pointer;
+}
+#navigation-login #user-menu .user-menu__menu-buttons img{
+    position:relative;
+    top: 2px;
+    left: 5px;
+    width: 16px;
+}
+#navigation-login #user-menu .user-menu__menu-buttons a {
+    margin-left: 10px;
+}
+#navigation-login #user-menu .user-menu__menu-buttons a:hover {
+    border-bottom: 1px solid var(--just-white);
+}
+#navigation-login #user-menu .user-menu__log-out {
+    grid-column: 2/3;
+    grid-row: 4/5;
+    
+}
+    
+}
+@media screen and (max-width: 600px) {
+    #navigation-login #user-menu {
+        width: 100vw;
+    }
 }

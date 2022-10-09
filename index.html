@@ -13,13 +13,17 @@
     <link rel="icon" href="favicon.ico" />
     <link rel="stylesheet" href="./Styles/styles.css">
 </head>
+ <!-- ------------------------------------------------------------------------- -->
 <body>
     <header>
         <nav class="navigation-container">            
-            <a class="navigation-logo" href="index.html"></a>            
+            <div class="navigation-logo">
+                <a href="index.html"></a>
+            </div>              
+                     
             <!--  -->       
             <ul class="navigation-menu">
-                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html">HOME</a></li>
                 <li><a href="blog.html">BLOG</a></li>
                 <li><a href="features.html">FEATURES</a></li>
                 <li><a href="shelter.html">SHELTER</a></li>
@@ -36,6 +40,9 @@
                 <section class="navigation__login-logged">
                     <a  href="index.html"></a> 
                 </section>
+                <section id="navigation__login-responsive-menu">
+                    <div></div> 
+                </section>
                 <!--  -->               
                 <section id="user-menu">
                     <img src="./Sources/INDEX/user-menu__close.png" id="user-menu__close-icon">
@@ -43,21 +50,31 @@
                         <img src="./Sources/INDEX/menu-spanish-flag.png" class="language__selector-image language-esp">
                         <img src="./Sources/INDEX/menu-english-flag.png" class="language__selector-image language-eng">
                     </div>
-                    
-                    <datalist id="user-menu__language-selector">
-                        <option value="ENG"></option>
-                        <option value="ESP"></option>
-                    </datalist>
-                    <div class="user-menu__menu-buttons">
-                        <span><img src="./Sources/INDEX/menu-user-icon.png"> <a href="myaccount.html">My Account</a></span>
+                    <!--  -->
+                    <div class="user-menu__menu-buttons"> 
+                        <span><img src="./Sources/INDEX/menu-user-icon.png"><a href="myaccount.html">My Account</a></span>
                         <span><img src="./Sources/INDEX/user-menu__shopping-cart.png"> <a href="mycart.html">My Cart</a></span>
                         <span><img src="./Sources/INDEX/menu-helpcenter-icon.png"> <a href="helpcenter.html">Help Center</a></span>
+                        <!--  -->
+                        <br>
+                        <hr style="width:80%;" class="user-menu__responsive-options">  
+                        <br>                <!--      -->  
+                        <span class="user-menu__responsive-options"><img src="./Sources/INDEX/navigation-home.png"><a href="index.html">Home</a></span>
+                        <span class="user-menu__responsive-options"><img src="./Sources/INDEX/navigation-blog.png""><a href="blog.html">Blog</a></span>
+                        <span class="user-menu__responsive-options"><img src="./Sources/INDEX/navigation-features.png""><a href="features.html">Features</a></span>
+                        <span class="user-menu__responsive-options"><img src="./Sources/INDEX/navigation-shelter.png""><a href="shelter.html">Shelter</a></span>
+                        <span class="user-menu__responsive-options"><img src="./Sources/INDEX/navigation-shop.png""><a href="shop.html">Shop</a></span>
+                        <span class="user-menu__responsive-options"><img src="./Sources/INDEX/navigation-vet.png""><a href="vet.html">Vet</a></span>
+                        <span class="user-menu__responsive-options"><img src="./Sources/INDEX/navigation-contact.png""><a href="contact.html">Contact</a></span>
+                        <!--  -->
+                        <br>
                     </div>
-                    <div class="user-menu__log-out"><a id="user-menu__log-out" href="#">Log out</a></div>
+                    <div class="user-menu__log-out"><a id="user-menu__log-out" href="#">Log out</a></div>                    
                 </section>
             </section>
         </nav>
     </header>
+    <!-- ------------------------------------------------------------------------- -->
     <main>
         <section class="home__main">
             <article class="home__main-picture">
